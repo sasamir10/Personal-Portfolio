@@ -763,11 +763,11 @@ body {
 /* Floating tech tags */
 .tech-tag {
     position: absolute;
-    background: rgba(6, 10, 15, 0.9);
+    /* background: rgba(6, 10, 15, 0.9); */
     border: 1px solid rgba(0, 229, 192, 0.25);
     color: var(--cyan);
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     padding: 0.35rem 0.7rem;
     border-radius: 8px;
     backdrop-filter: blur(8px);
