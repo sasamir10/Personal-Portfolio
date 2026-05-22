@@ -1464,7 +1464,7 @@ body {
 
 /* Footer */
 .footer {
-    padding: 2.5rem;
+    padding: 1rem;
     background: var(--bg-2);
     border-top: 1px solid var(--border);
 }
@@ -1474,7 +1474,7 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
