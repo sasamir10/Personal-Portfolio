@@ -763,8 +763,7 @@ body {
 /* Floating tech tags */
 .tech-tag {
     position: absolute;
-    /* background: rgba(6, 10, 15, 0.9); */
-    border: 1px solid rgba(0, 229, 192, 0.25);
+    border: 1px solid rgba(1, 221, 184, 0.25);
     color: var(--cyan);
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -810,7 +809,7 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 0.75rem;
+    bottom: 0.4rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -823,6 +822,21 @@ body {
     letter-spacing: 0.1em;
     animation: fadeInUp 1s 1.5s ease both;
     z-index: 5;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        filter 0.45s ease,
+        visibility 0.45s ease;
+}
+
+/* hidden state after scrolling */
+.scroll-indicator.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(24px);
+    filter: blur(6px);
+    visibility: hidden;
+    pointer-events: none;
 }
 
 @keyframes fadeInUp {
@@ -839,11 +853,24 @@ body {
 .scroll-mouse {
     width: 22px;
     height: 36px;
-    border: 1.5px solid var(--gray-dark);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+
     border-radius: 12px;
     display: flex;
     justify-content: center;
     padding-top: 6px;
+}
+
+.scroll-indicator:hover {
+    color: var(--white);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.scroll-indicator:hover .scroll-mouse {
+    border-color: var(--cyan);
 }
 
 .scroll-dot {
@@ -851,7 +878,8 @@ body {
     height: 8px;
     background: var(--cyan);
     border-radius: 2px;
-    animation: scrollDot 1.8s ease-in-out infinite;
+
+    animation: scrollDot 2.2s cubic-bezier(0.76, 0, 0.24, 1) infinite;
 }
 
 @keyframes scrollDot {
