@@ -109,7 +109,6 @@ function initMobileMenu() {
 }
 
 // Scroll Reveal
-
 function initScrollReveal() {
     const targets = document.querySelectorAll(
         "[data-reveal], [data-reveal-right]",
@@ -155,30 +154,7 @@ function initScrollReveal() {
     }, 200);
 }
 
-// newly added code
-const scrollIndicator = document.querySelector(".scroll-indicator");
-const heroSection = document.querySelector(".hero");
-
-window.addEventListener("scroll", () => {
-    const heroHeight = heroSection.offsetHeight;
-    const scrollY = window.scrollY;
-
-    // hide after leaving hero
-    if (scrollY > heroHeight * 0.35) {
-        scrollIndicator.classList.add("hide");
-    } else {
-        scrollIndicator.classList.remove("hide");
-    }
-});
-
-scrollIndicator.addEventListener("click", () => {
-    document.querySelector("#about").scrollIntoView({
-        behavior: "smooth",
-    });
-});
-
-// SKILL BARS — animate on scroll
-
+// SKILL BARS - animate on scroll
 function initSkillBars() {
     const fills = document.querySelectorAll(".skill-fill");
 
