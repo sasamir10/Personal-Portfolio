@@ -259,7 +259,7 @@ function initParallaxCode() {
     });
 }
 
-// CONTACT FORM
+// 1.Contact Form
 function initContactForm() {
     const form = document.getElementById("contactForm");
     if (!form) return;
@@ -300,7 +300,7 @@ function initContactForm() {
     });
 }
 
-// SMOOTH SCROLL for anchor links
+// 2.Smooth Scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         const target = document.querySelector(this.getAttribute("href"));
@@ -315,7 +315,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// CURSOR TRAIL — subtle cyan dots
+// 3.Cursor Trail — subtle cyan dots
 (function initCursorTrail() {
     const isMobile = () => window.innerWidth < 768;
     if (isMobile()) return;
@@ -378,7 +378,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 })();
 
-// STATS COUNTER — animate numbers on scroll
+// 4.Stats Counter — animate numbers on scroll
 function animateCounter(el, target, duration = 1800) {
     let start = null;
 
