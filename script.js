@@ -264,7 +264,7 @@ function initContactForm() {
     const form = document.getElementById("contactForm");
     if (!form) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const btn = form.querySelector(".form-submit");
@@ -275,18 +275,35 @@ function initContactForm() {
         btn.disabled = true;
 
         // Simulate send
-        setTimeout(() => {
-            btn.textContent = "✓ Message Sent!";
-            btn.style.background = "#00a884";
-            btn.style.opacity = "1";
-            form.reset();
+        try {
+            const formData = new FormData(form);
 
-            setTimeout(() => {
-                btn.textContent = original;
-                btn.style.background = "";
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                btn.textContent = "✓ Message Sent!";
+                btn.style.background = "#00a884";
+
+                form.reset();
+
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.style.background = "";
+                    btn.disabled = false;
+                }, 3500);
+            } else {
+                btn.textContent = "Failed!";
                 btn.disabled = false;
-            }, 3500);
-        }, 1200);
+            }
+        } catch (error) {
+            btn.textContent = "Error!";
+            btn.disabled = false;
+        }
     });
 
     // Focus glow on inputs

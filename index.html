@@ -576,8 +576,7 @@
                     Let's <span class="highlight">Connect</span>
                 </h2>
                 <p class="section-sub">
-                    Have a project in mind? Let's build something amazing
-                    together.
+                    Got an idea? Let's bring it to a life.
                 </p>
 
                 <div class="contact-grid">
@@ -612,12 +611,18 @@
                     </div>
 
                     <form class="contact-form" data-reveal id="contactForm">
+                        <input
+                            type="hidden"
+                            name="access_key"
+                            value="d2e3335e-4cee-4625-98e5-aecbbcf55ba7"
+                        />
                         <div class="form-group">
-                            <label for="name">Your Name</label>
+                            <label for="name">Name</label>
                             <input
                                 type="text"
                                 id="name"
-                                placeholder="Enter Name"
+                                name="name"
+                                placeholder="Enter Your Name"
                                 required
                             />
                         </div>
@@ -626,6 +631,7 @@
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="Enter Your Email"
                                 required
                             />
@@ -635,6 +641,7 @@
                             <input
                                 type="text"
                                 id="subject"
+                                name="subject"
                                 placeholder="Project Inquiry"
                             />
                         </div>
@@ -642,6 +649,7 @@
                             <label for="message">Message</label>
                             <textarea
                                 id="message"
+                                name="message"
                                 rows="5"
                                 placeholder="Tell me about your project..."
                                 required
